@@ -22,12 +22,14 @@ export class ByRegionPageComponent implements OnInit {
   ngOnInit(): void {
     this.countries = this.countryService.cacheStore.byRegion.countries;
     this.selectedRegion = this.countryService.cacheStore.byRegion.region;
+
   }
 
   searchByRegion( region: Region ) {
     this.selectedRegion = region;
     this.countryService.searchRegion( region ).subscribe( res => {
       this.countries = res;
+      // this.countries = this.countries.slice(0, 10);
     } )
   }
 }

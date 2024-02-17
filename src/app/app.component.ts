@@ -7,4 +7,16 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'countryApp';
+
+  myTheme: string = 'light';
+
+  constructor() {
+    this.changeTheme();
+  }
+
+  changeTheme() {
+    this.myTheme = this.myTheme === 'light' ? 'dark' : 'light';
+    const body = document.body as HTMLElement;
+    body.setAttribute('data-bs-theme', this.myTheme);
+  }
 }

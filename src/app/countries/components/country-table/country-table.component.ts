@@ -11,6 +11,17 @@ import { Country } from '../../interfaces/country.interface';
   ]
 })
 export class CountryTableComponent {
+
+  currentPage = 1;
+  itemsPerPage = 10;
+
   @Input()
   countries:Country[] = [];
+
+  constructor() {
+    const start = (this.currentPage - 1) * this.itemsPerPage;
+    const end = start + this.itemsPerPage;
+    this.countries = this.countries.slice(0, 10);
+    console.log(this.countries)
+  }
 }
