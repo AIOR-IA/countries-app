@@ -4,24 +4,16 @@ import { Country } from '../../interfaces/country.interface';
 @Component({
   selector: 'countries-table',
   templateUrl: './country-table.component.html',
-  styles: [
-    `img {
-      width: 35px
-    }`
-  ]
+  styleUrls: ['./country-table.component.css']
 })
 export class CountryTableComponent {
 
-  currentPage = 1;
-  itemsPerPage = 10;
+  page: number = 1;
 
   @Input()
   countries:Country[] = [];
 
   constructor() {
-    const start = (this.currentPage - 1) * this.itemsPerPage;
-    const end = start + this.itemsPerPage;
-    this.countries = this.countries.slice(0, 10);
-    console.log(this.countries)
+
   }
 }

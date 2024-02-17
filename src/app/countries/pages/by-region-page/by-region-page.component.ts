@@ -29,7 +29,7 @@ export class ByRegionPageComponent implements OnInit {
     this.selectedRegion = region;
     this.countryService.searchRegion( region ).subscribe( res => {
       this.countries = res;
-      // this.countries = this.countries.slice(0, 10);
+      // this.countries = this.countries.slice(0, 10);ng s
     } )
   }
 }
